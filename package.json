@@ -1,19 +1,32 @@
 {
-  "name": "corona-game",
+  "name": "simple-webpack-scaffold",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A blank Koji template with webpack bundler",
+  "author": "seane",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "NODE_ENV=production webpack --config ./.internals/webpack.production.js --color -p --progress --hide-modules --display-optimization-bailout",
+    "prestart": "koji-vcc watch &",
+    "start": "webpack-dev-server --config ./.internals/webpack.development.js --hot --inline"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kostadin-t/corona-game.git"
+  "keywords": [
+    "Koji",
+    "Hello World",
+    "Webpack"
+  ],
+  "dependencies": {
+    "@withkoji/vcc": "^1.1.1",
+    "pixi.js": "^5.0.0-rc"
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/kostadin-t/corona-game/issues"
-  },
-  "homepage": "https://github.com/kostadin-t/corona-game#readme"
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.1.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.37.0",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.7.2"
+  }
 }
